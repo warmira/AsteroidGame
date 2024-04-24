@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     //prêdkoœæ kamery - do u¿ytku dla smoothdamp
     Vector3 cameraSpeed;
     //szybkoœæ wyg³adzania ruchu kamery - dla smoothdamp
-    public float dampSpeed = 1f;
+    public float dampSpeed = 0.01f;
     // Start is called before the first frame update
     void Start()
     {
