@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 27
-  productGUID: e79e4b9c092e0d247b64077ca7a3abea
+  productGUID: 4cf37ac915e398849b31720d0d6adfb3
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: AsteroidGame
+  productName: AsteroidsGame
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -686,14 +686,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: AsteroidGame
+  metroPackageName: AsteroidsGame
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: AsteroidGame
+  metroApplicationDescription: AsteroidsGame
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -764,11 +764,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: bff4b192-a6a7-4f09-bffc-5813b0b74e6d
+  cloudProjectId: 60a484c5-0951-49f6-a40e-fdaa048b06c8
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: AsteroidGame
-  organizationId: warmira
+  projectName: AsteroidsGame
+  organizationId: faarciarz
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

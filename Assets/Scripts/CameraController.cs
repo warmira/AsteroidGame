@@ -1,38 +1,38 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    //wspó³rzêdne gracza
+    //wspÃ³Å‚rzÄ™dne gracza
     Transform player;
-    //wysokoœæ kamery
+    //wysokoÅ›Ä‡ kamery
     public float cameraHeight = 10.0f;
-    //prêdkoœæ kamery - do u¿ytku dla smoothdamp
+    //prÄ™dkoÅ›Ä‡ kamery - do uÅ¼ytku dla smoothdamp
     Vector3 cameraSpeed;
-    //szybkoœæ wyg³adzania ruchu kamery - dla smoothdamp
-    public float dampSpeed = 0.01f;
+    //szybkoÅ›Ä‡ wygÅ‚adzania ruchu kamery - dla smoothdamp
+    public float dampSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
-        //pod³¹cz pozycjê gracza do lokalnej zmiennej korzystaj¹c z jego taga
-        //to nie jest zapisanie wartoœci jeden raz tylko referencja do obiektu
-        //to znaczy, ¿e player zawszê bêdzie zawiera³ aktualn¹ pozycjê gracza
+        //podÅ‚Ä…cz pozycjÄ™ gracza do lokalnej zmiennej korzystajÄ…c z jego taga
+        //to nie jest zapisanie wartoÅ›ci jeden raz tylko referencja do obiektu
+        //to znaczy, Å¼e player zawszÄ™ bÄ™dzie zawieraÅ‚ aktualnÄ… pozycjÄ™ gracza
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //oblicz docelow¹ pozycjê kamery
+        //oblicz docelowÄ… pozycjÄ™ kamery
         Vector3 targetPosition = player.position + Vector3.up * cameraHeight;
 
-        //p³ynnie przesuñ kamerê w kierunku gracza
+        //pÅ‚ynnie przesuÅ„ kamerÄ™ w kierunku gracza
         //funkcja Vector3.Lerp
-        //p³ynnie przechodzi z pozycji pierwszego argumentu do pozycji drugiego w czasie trzeciego
+        //pÅ‚ynnie przechodzi z pozycji pierwszego argumentu do pozycji drugiego w czasie trzeciego
         //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime);
 
-        //smoothdamp dzia³a jak sprê¿yna staraj¹ca siê doci¹gn¹æ kamerê do was
+        //smoothdamp dziaÅ‚a jak sprÄ™Å¼yna starajÄ…ca siÄ™ dociÄ…gnÄ…Ä‡ kamerÄ™ do was
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref cameraSpeed, dampSpeed);
     }
 }
