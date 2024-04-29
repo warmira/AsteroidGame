@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidSpawner : MonoBehaviour
+public class DynamicAsteroidSpawner : MonoBehaviour
 {
     //gracz (jego pozycja)
     Transform player;
 
     //prefab statycznej asteroidy
-    public GameObject staticAsteroid;
+    public GameObject DynamicAsteroid;
 
     //czas od ostatio wygenerowanej asteoidy
     float timeSinceSpawn;
@@ -33,12 +33,12 @@ public class AsteroidSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnAsteroid(staticAsteroid);
+        SpawnDynamicAsteroid(DynamicAsteroid);
 
         AsteroidCountControll();
     }
 
-    GameObject? SpawnAsteroid(GameObject prefab)
+    GameObject? SpawnDynamicAsteroid(GameObject prefab)
     {
         //generyczna funkcja sluzaca do wylosowania wspolrzednych i umieszczenia
         //w tym miejscu asteroidy z prefaba
@@ -59,7 +59,7 @@ public class AsteroidSpawner : MonoBehaviour
         {
             //stworz zmienn¹ asteroid, zespawnuj nowy asteroid korzystaj¹c z prefaba
             // w losowym miejscu, z rotacj¹ domyœln¹ (Quaternion.identity)
-            GameObject asteroid = Instantiate(staticAsteroid, randomPosition, Quaternion.identity);
+            GameObject asteroid = Instantiate(DynamicAsteroid, randomPosition, Quaternion.identity);
 
             //zwróæ asteroidê jako wynik dzia³ania
             return asteroid;
@@ -73,7 +73,7 @@ public class AsteroidSpawner : MonoBehaviour
     void AsteroidCountControll()
     {
         //przygotuj tablicê wszystkich asteroidów na scenie
-        GameObject[] asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
+        GameObject[] asteroids = GameObject.FindGameObjectsWithTag("DynamicAsteroid");
 
         //przejdŸ pêtl¹ przez wyszystkie
         foreach (GameObject asteroid in asteroids)
@@ -89,7 +89,7 @@ public class AsteroidSpawner : MonoBehaviour
 
             if (distanceToPlayer > 30)
             {
-                Destroy(asteroid);
+                Destroy(DynamicAsteroid);
             }
         }
     }
